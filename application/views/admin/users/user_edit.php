@@ -55,7 +55,8 @@
                   <select name="user_role" class="form-control">
                     <option value="">Select Role</option>
                     <option value="1" <?= ($user['is_admin'] == 1)?'selected': '' ?> >Admin</option>
-                    <option value="0" <?= ($user['is_admin'] == 0)?'selected': '' ?>>User</option>
+                    <option value="2" <?= ($user['is_admin'] == 2)?'selected': '' ?>>Customer</option>
+                    <option value="3" <?= ($user['is_admin'] == 3)?'selected': '' ?>>Worker</option>
                   </select>
                 </div>
               </div>

@@ -30,30 +30,73 @@ $cur_tab = $this->uri->segment(2)==''?'dashboard': $this->uri->segment(2);
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li id="dashboard" class="treeview">
-          <a href="#">
+          <a href="<?= base_url('admin/dashboard'); ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li id="dashboard1"><a href="<?= base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Dashboard</a></li>
-            <li id="dashboard2"><a href="<?= base_url('admin/dashboard2/'); ?>"><i class="fa fa-circle-o"></i> Dashboard V2</a></li>
-          </ul>
         </li>
       </ul>
 
       <ul class="sidebar-menu">
         <li id="users" class="treeview">
             <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Users</span>
+              <i class="fa fa-users"></i> <span>Customers</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li id="add_user"><a href="<?= base_url('admin/users/add'); ?>"><i class="fa fa-circle-o"></i> Add User</a></li>
-              <li id="view_users" class=""><a href="<?= base_url('admin/users'); ?>"><i class="fa fa-circle-o"></i> View Users</a></li>
+              <li id="add_user"><a href="<?= base_url('admin/users/add'); ?>"><i class="fa fa-circle-o"></i> Add Customer</a></li>
+              <li id="view_users" class=""><a href="<?= base_url('admin/users'); ?>"><i class="fa fa-circle-o"></i> View Customers</a></li>
+            </ul>
+          </li>
+          <li id="products" class="treeview">
+            <a href="#">
+              <i class="fa fa-cubes"></i> <span>Products</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li id="add_product"><a href="<?= base_url('admin/products/add'); ?>"><i class="fa fa-circle-o"></i> Add Product</a></li>
+              <li id="view_products" class=""><a href="<?= base_url('admin/products'); ?>"><i class="fa fa-circle-o"></i> View Products</a></li>
+            </ul>
+          </li>
+          <li id="tasks" class="treeview">
+            <a href="#">
+              <i class="fa fa-tasks"></i> <span>Tasks</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li id="add_task"><a href="<?= base_url('admin/tasks/add'); ?>"><i class="fa fa-circle-o"></i> Add Task</a></li>
+              <li id="view_tasks" class=""><a href="<?= base_url('admin/tasks'); ?>"><i class="fa fa-circle-o"></i> View Tasks</a></li>
+              <li id="assign_task"><a href="<?= base_url('admin/tasks/assign_add'); ?>"><i class="fa fa-circle-o"></i> Assign Task</a></li>
+              <li id="view_assign_tasks" class=""><a href="<?= base_url('admin/tasks/assign'); ?>"><i class="fa fa-circle-o"></i> View Assign Tasks</a></li>
+            </ul>
+          </li>
+          <li id="appoinments" class="treeview">
+            <a href="#">
+              <i class="fa fa-calendar-check-o"></i> <span>Appoinments</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li id="add_appoinment"><a href="<?= base_url('admin/appoinments/add'); ?>"><i class="fa fa-circle-o"></i> Add Appoinment</a></li>
+              <li id="view_appoinments" class=""><a href="<?= base_url('admin/appoinments'); ?>"><i class="fa fa-circle-o"></i> View Appoinments</a></li>
+            </ul>
+          </li>
+          <li id="accounts" class="treeview">
+            <a href="#">
+              <i class="fa fa-money"></i> <span>Accounts</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li id="add_account"><a href="<?= base_url('admin/accounts/add'); ?>"><i class="fa fa-circle-o"></i> Add Account</a></li>
+              <li id="view_accounts" class=""><a href="<?= base_url('admin/accounts'); ?>"><i class="fa fa-circle-o"></i> View Accounts</a></li>
             </ul>
           </li>
           <li id="adminlte" class="treeview">
