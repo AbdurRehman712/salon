@@ -23,14 +23,11 @@
 
                 <div class="col-sm-9">
                   <select name="task_id" class="form-control">
-
-                  <?php foreach($assign_task as $row) { ?>
-                    <option value="<?php echo $row['task_id'];?>" <?php if($row['task_id'] == $invoices->customer_id){ echo 'selected';} ?>><?php echo $row['user_name'] . " (". $row['user_email'].")";?></option>
+                  <option value="">Select Task</option>
+                  <?php foreach($task as $row) { ?>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['task_name'];?></option>
                   <?php } ?>
 
-                    <option value="">Select Task</option>
-                    <option value="1">Admin</option>
-                    <option value="0">User</option>
                   </select>
                 </div>
               </div>
@@ -40,9 +37,11 @@
 
                 <div class="col-sm-9">
                   <select name="worker_id" class="form-control">
-                    <option value="">Select Worker</option>
-                    <option value="1">Admin</option>
-                    <option value="0">User</option>
+                  <option value="">Select Worker</option>
+                  <?php foreach($all_worker as $row) { ?>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['username'];?></option>
+                  <?php } ?>
+                
                   </select>
                 </div>
               </div>

@@ -23,9 +23,9 @@
 
                 <div class="col-sm-9">
                   <select name="task_id" class="form-control">
-                    <option value="">Select Task</option>
-                    <option value="1" <?= ($assign_task['task_id'] == 1)?'selected': '' ?> >Admin</option>
-                    <option value="0" <?= ($assign_task['task_id'] == 0)?'selected': '' ?>>User</option>
+                  <?php foreach($task as $row) { ?>
+                    <option value="<?php echo $row['id'];?>" <?php if($row['id'] == $assign_task['task_id']){ echo 'selected';} ?>><?php echo $row['task_name'];?></option>
+                  <?php } ?>
                   </select>
                 </div>
               </div>
@@ -35,9 +35,9 @@
 
                 <div class="col-sm-9">
                   <select name="worker_id" class="form-control">
-                    <option value="">Select Worker</option>
-                    <option value="1" <?= ($assign_task['worker_id'] == 1)?'selected': '' ?> >Admin</option>
-                    <option value="0" <?= ($assign_task['worker_id'] == 0)?'selected': '' ?>>User</option>
+                  <?php foreach($all_worker as $row) { ?>
+                    <option value="<?php echo $row['id'];?>" <?php if($row['id'] == $assign_task['worker_id']){ echo 'selected';} ?>><?php echo $row['username'];?></option>
+                  <?php } ?>
                   </select>
                 </div>
               </div>
@@ -60,7 +60,6 @@
 
                 <div class="col-sm-9">
                   <select name="task_status" class="form-control">
-                    <option value="">Task Status</option>
                     <option value="1" <?= ($assign_task['task_status'] == 1)?'selected': '' ?> >Completed</option>
                     <option value="0" <?= ($assign_task['task_status'] == 0)?'selected': '' ?>>Not Completed</option>
                   </select>

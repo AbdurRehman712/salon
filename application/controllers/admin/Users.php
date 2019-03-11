@@ -36,7 +36,7 @@
 						'email' => $this->input->post('email'),
 						'mobile_no' => $this->input->post('mobile_no'),
 						'password' =>  password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-						'is_admin' => $this->input->post('user_role'),
+						'is_worker' => $this->input->post('user_role'),
 						'created_at' => date('Y-m-d : h:m:s'),
 						'updated_at' => date('Y-m-d : h:m:s'),
 					);
@@ -76,7 +76,7 @@
 						'email' => $this->input->post('email'),
 						'mobile_no' => $this->input->post('mobile_no'),
 						'password' =>  password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-						'is_admin' => $this->input->post('user_role'),
+						'is_worker' => $this->input->post('user_role'),
 						'updated_at' => date('Y-m-d : h:m:s'),
 					);
 					$data = $this->security->xss_clean($data);
@@ -95,7 +95,7 @@
 		}
 
 		public function del($id = 0){
-			$this->db->delete('ci_users', array('id' => $id));
+			$this->db->delete('users', array('id' => $id));
 			$this->session->set_flashdata('msg', 'Record is Deleted Successfully!');
 			redirect(base_url('admin/users'));
 		}

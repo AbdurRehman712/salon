@@ -61,9 +61,9 @@
                 <div class="col-sm-9">
                   <select name="user_role" class="form-control">
                     <option value="">Select Role</option>
-                    <option value="1">Admin</option>
-                    <option value="2">Customer</option>
-                    <option value="3">Worker</option>
+                    <option value="0">Worker</option>
+                    <option value="1">Customer</option>
+                    
                   </select>
                 </div>
               </div>

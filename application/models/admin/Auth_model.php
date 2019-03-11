@@ -2,7 +2,7 @@
 	class Auth_model extends CI_Model{
 
 		public function login($data){
-			$query = $this->db->get_where('ci_users', array('email' => $data['email']));
+			$query = $this->db->get_where('admin', array('email' => $data['email']));
 			if ($query->num_rows() == 0){
 				return false;
 			}
@@ -19,7 +19,7 @@
 
 		public function change_pwd($data, $id){
 			$this->db->where('id', $id);
-			$this->db->update('ci_users', $data);
+			$this->db->update('admin', $data);
 			return true;
 		}
 

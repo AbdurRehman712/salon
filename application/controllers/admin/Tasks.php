@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->model('admin/task_model', 'task_model');
 			$this->load->model('admin/assign_task_model', 'assign_task_model');
+			$this->load->model('admin/user_model', 'user_model');
 		}
 
 		public function index(){
@@ -104,7 +105,8 @@
 				$this->form_validation->set_rules('task_status', 'Task Status', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
-					$data['task'] = $this->task_model->get_task_by_id($id);
+					$data['all_worker'] =  $this->user_model->get_all_worker();
+					$data['task'] = $this->task_model->get_all_tasks();
 					$data['view'] = 'admin/tasks/assign_task_add';
 					$this->load->view('admin/layout', $data);
 				}
@@ -127,6 +129,8 @@
 				}
 			}
 			else{
+				$data['all_worker'] =  $this->user_model->get_all_worker();
+				$data['task'] = $this->task_model->get_all_tasks();
 				$data['view'] = 'admin/tasks/assign_task_add';
 				$this->load->view('admin/layout', $data);
 			}
@@ -141,6 +145,8 @@
 				$this->form_validation->set_rules('task_status', 'Task Status', 'trim|required');
 
 				if ($this->form_validation->run() == FALSE) {
+					$data['all_worker'] =  $this->user_model->get_all_worker();
+					$data['task'] = $this->task_model->get_all_tasks();
 					$data['assign_task'] = $this->assign_task_model->get_assign_task_by_id($id);
 					$data['view'] = 'admin/tasks/assign_task_edit';
 					$this->load->view('admin/layout', $data);
@@ -162,6 +168,8 @@
 				}
 			}
 			else{
+				$data['all_worker'] =  $this->user_model->get_all_worker();
+				$data['task'] = $this->task_model->get_all_tasks();
 				$data['assign_task'] = $this->assign_task_model->get_assign_task_by_id($id);
 				$data['view'] = 'admin/tasks/assign_task_edit';
 				$this->load->view('admin/layout', $data);

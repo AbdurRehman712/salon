@@ -29,11 +29,11 @@
             <td>
               <span class="btn btn-primary btn-flat btn-xs">
                 <?php
-                 if($row['is_admin'] == 1) {echo 'Admin';} 
-                 elseif($row['is_admin'] == 2) {echo 'Customer';} else {echo 'Worker';} 
+                 if($row['is_worker'] == 0) {echo 'Worker';} 
+                 else{echo 'Customer';} 
                 ?>
               <span></td>
-            <td class="text-right"><a href="<?= base_url('admin/users/edit/'.$row['id']); ?>" class="btn btn-info btn-flat">Edit</a><a href="<?= base_url('admin/users/del/'.$row['id']); ?>" class="btn btn-danger btn-flat <?= ($row['is_admin'] == 1)? 'disabled': ''?>">Delete</a></td>
+            <td class="text-right"><a href="<?= base_url('admin/users/edit/'.$row['id']); ?>" class="btn btn-info btn-flat">Edit</a><a href="<?= base_url('admin/users/del/'.$row['id']); ?>" class="btn btn-danger btn-flat">Delete</a></td>
           </tr>
           <?php endforeach; ?>
         </tbody>

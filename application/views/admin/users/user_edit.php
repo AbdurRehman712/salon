@@ -54,9 +54,9 @@
                 <div class="col-sm-9">
                   <select name="user_role" class="form-control">
                     <option value="">Select Role</option>
-                    <option value="1" <?= ($user['is_admin'] == 1)?'selected': '' ?> >Admin</option>
-                    <option value="2" <?= ($user['is_admin'] == 2)?'selected': '' ?>>Customer</option>
-                    <option value="3" <?= ($user['is_admin'] == 3)?'selected': '' ?>>Worker</option>
+                    <option value="0" <?= ($user['is_worker'] == 0)?'selected': '' ?>>Worker</option>
+                    <option value="1" <?= ($user['is_worker'] == 1)?'selected': '' ?>>Customer</option>
+                    
                   </select>
                 </div>
               </div>
