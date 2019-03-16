@@ -16,6 +16,11 @@
 			return $result = $query->result_array();
 		}
 
+		public function get_all_customers(){
+			$query = $this->db->get_where('users', array('is_worker' => '1'));
+			return $result = $query->result_array();
+		}
+
 		public function get_user_by_id($id){
 			$query = $this->db->get_where('users', array('id' => $id));
 			return $result = $query->row_array();

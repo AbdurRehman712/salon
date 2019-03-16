@@ -24,7 +24,14 @@
             <td><?= $row['task_id']; ?></td>
             <td><?= $row['worker_id']; ?></td>
             <td><?= $row['task_date']; ?></td>
-            <td><?= $row['task_status']; ?></td>
+            <td>
+              <span class="btn btn-primary btn-flat btn-xs">
+                <?php
+                 if($row['task_status'] == 0) {echo 'Not Commpleted';} 
+                 else{echo 'Completed';} 
+                ?>
+              <span>
+            </td>
             <td class="text-right"><a href="<?= base_url('admin/tasks/assign_edit/'.$row['id']); ?>" class="btn btn-info btn-flat">Edit</a><a href="<?= base_url('admin/tasks/assign_del/'.$row['id']); ?>" class="btn btn-danger btn-flat">Delete</a></td>
           </tr>
           <?php endforeach; ?>

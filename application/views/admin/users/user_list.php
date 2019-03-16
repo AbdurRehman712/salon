@@ -32,7 +32,8 @@
                  if($row['is_worker'] == 0) {echo 'Worker';} 
                  else{echo 'Customer';} 
                 ?>
-              <span></td>
+              <span>
+            </td>
             <td class="text-right"><a href="<?= base_url('admin/users/edit/'.$row['id']); ?>" class="btn btn-info btn-flat">Edit</a><a href="<?= base_url('admin/users/del/'.$row['id']); ?>" class="btn btn-danger btn-flat">Delete</a></td>
           </tr>
           <?php endforeach; ?>
