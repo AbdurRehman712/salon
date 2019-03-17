@@ -50,15 +50,28 @@
                 <label for="appoinment_date" class="col-sm-2 control-label">Appointment Date</label>
 
                 <div class="col-sm-9">
-                  <input type="date" name="appoinment_date" class="form-control" id="appoinment_date" placeholder="">
+                  <div class="input-group date">
+                    <input type="date" name="appoinment_date" class="form-control" id="appoinment_date" placeholder="">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
-
+              
+              
               <div class="form-group">
-                <label for="appoinment_time" class="col-sm-2 control-label">Appointment Time</label>
+                  <label for="appoinment_time" class="col-sm-2 control-label">Appointment Time</label>
 
                 <div class="col-sm-9">
-                  <input type="time" name="appoinment_time" class="form-control" id="appoinment_time" placeholder="">
+                  <div class="bootstrap-timepicker">
+                    <div class="input-group">
+                      <input type="text" name="appoinment_time" class="form-control timepicker" id="appoinment_time" placeholder="">
+                      <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -97,5 +110,19 @@
 
 
 <script>
+$(function () {
+      //Timepicker
+      $(".timepicker").timepicker({
+      showInputs: false,
+    });
+    // $('.timepicker').timepicker({ 
+    //   showInputs: false,
+    //   minuteStep: 60, 
+    // }).on('changeTime.timepicker', function(e) { 
+    //   if(e.time.value >= "12:00 AM"){ 
+    //     alert("This Time is already Selected. "); 
+    //   } 
+    // });
+  });
 $("#add_appoinment").addClass('active');
 </script>    

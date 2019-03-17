@@ -46,12 +46,16 @@
                 <label for="appoinment_date" class="col-sm-2 control-label">Appoinment Date</label>
 
                 <div class="col-sm-9">
-
-                  <?php 
-                      $originalDate = $appoinment['appoinment_date'];
-                      $newDate = date("Y-m-d", strtotime($originalDate));
-                  ?>
-                  <input type="date" name="appoinment_date" value="<?= $newDate; ?>" class="form-control" id="appoinment_date">
+                  <div class="input-group date">
+                    <?php 
+                        $originalDate = $appoinment['appoinment_date'];
+                        $newDate = date("Y-m-d", strtotime($originalDate));
+                    ?>
+                    <input type="date" name="appoinment_date" value="<?= $newDate; ?>" class="form-control" id="appoinment_date">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -59,12 +63,14 @@
                 <label for="appoinment_time" class="col-sm-2 control-label">Appoinment Time</label>
 
                 <div class="col-sm-9">
-
-                  <?php 
-                      $originalDate = $appoinment['appoinment_time'];
-                      $newTime = date("H:i", strtotime($originalDate));
-                  ?>
-                  <input type="time" name="appoinment_time" value="<?= $newTime; ?>" class="form-control" id="appoinment_time">
+                  <div class="bootstrap-timepicker">
+                    <div class="input-group">
+                    <input type="text" name="appoinment_time" value="<?= $appoinment['appoinment_time'] ?>" class="form-control timepicker" id="appoinment_time">
+                    <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -72,7 +78,7 @@
                 <label for="comments" class="col-sm-2 control-label">Comments & Questions</label>
 
                 <div class="col-sm-9">
-                  <textarea type="time" name="comments" class="form-control" id="comments" placeholder="Enter comments or questions"><?= $appoinment['comments']?></textarea>
+                  <textarea name="comments" class="form-control" id="comments" placeholder="Enter comments or questions"><?= $appoinment['comments']?></textarea>
                 </div>
               </div>
 
@@ -100,3 +106,12 @@
   </div>  
 
 </section> 
+
+<script>
+$(function () {
+      //Timepicker
+      $(".timepicker").timepicker({
+      showInputs: false
+    });
+  });
+</script>

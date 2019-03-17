@@ -16,6 +16,10 @@
 		  <link rel="stylesheet" href="<?= base_url() ?>public/dist/css/style.css">
 		  <!-- AdminLTE Skins. Choose a skin from the css/skins. -->
 		  <link rel="stylesheet" href="<?= base_url() ?>public/dist/css/skins/skin-blue.min.css">
+		  <!-- Bootstrap time Picker -->
+  		  <link rel="stylesheet" href="<?= base_url() ?>public/plugins/timepicker/bootstrap-timepicker.min.css">			
+		  <!-- daterange picker -->
+ 		  <link rel="stylesheet" href="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.css">
 		  <!-- jQuery 2.2.3 -->
 		  <script src="<?= base_url() ?>public/plugins/jQuery/jquery-2.2.3.min.js"></script>
 		  <!-- jQuery UI 1.11.4 -->
@@ -72,6 +76,11 @@
 	<script src="<?= base_url() ?>public/dist/js/app.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?= base_url() ?>public/dist/js/demo.js"></script>
+	<!-- bootstrap time picker -->
+	<script src="<?= base_url() ?>public/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<!-- date-range-picker -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+	<script src="<?= base_url() ?>public/plugins/daterangepicker/daterangepicker.js"></script>
 	<!-- page script -->
 	<script type="text/javascript">
 	  $(".flash-msg").fadeTo(2000, 500).slideUp(500, function(){

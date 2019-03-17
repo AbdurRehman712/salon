@@ -43,15 +43,32 @@
               </div>
 
               <div class="form-group">
+                <label for="appoinment_id" class="col-sm-2 control-label">Select Appoinment</label>
+
+                <div class="col-sm-9">
+                  <select name="appoinment_id" class="form-control">
+                  <?php foreach($all_appoinment as $row) { ?>
+                    <option value="<?php echo $row['id'];?>" <?php if($row['id'] == $assign_task['appoinment_id']){ echo 'selected';} ?>><?php echo $row['product_id'];?>(<?php echo $row['appoinment_date'];?>)</option>
+                  <?php } ?>
+                
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label for="task_date" class="col-sm-2 control-label">Task Date</label>
 
                 <div class="col-sm-9">
-
-                  <?php 
-                      $originalDate = $assign_task['task_date'];
-                      $newDate = date("Y-m-d", strtotime($originalDate));
-                  ?>
-                  <input type="date" name="task_date" value="<?= $newDate; ?>" class="form-control" id="task_date">
+                  <div class="input-group date">
+                    <?php 
+                        $originalDate = $assign_task['task_date'];
+                        $newDate = date("Y-m-d", strtotime($originalDate));
+                    ?>
+                    <input type="date" name="task_date" value="<?= $newDate; ?>" class="form-control" id="task_date">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
 
