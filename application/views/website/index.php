@@ -43,7 +43,7 @@
 					        <li><a href="#Team">Team</a></li>
 					        <li><a href="#Blog">Blog</a></li>
 					        <li><a href="#About">About</a></li>
-					        <li><a href="#Contact">Contact</a></li>
+					        <li><a href="#Appoinment">Appoinment</a></li>
 					      </ul>
 					    </div><!-- /.navbar-collapse -->
 					</nav>
@@ -322,14 +322,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-6">
-					<div class="pricing-box p-icon p1">
-						<h3>Personal Care</h3>
-						<p>Starting from</p>
-						<h2>10$</h2>
+				<?php foreach($all_products as $row): ?>
+					<div class="col-md-4 col-sm-6">
+						<div class="pricing-box p-icon p1">
+							<h3><?= $row['product_name']; ?></h3>
+							<p><?= $row['product_description']; ?></p>
+							<h2>Rs:<?= $row['product_price']; ?></h2>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-6">
+				<?php endforeach; ?>
+				<!-- <div class="col-md-4 col-sm-6">
 					<div class="pricing-box p-icon p2">
 						<h3>Beauty Vip</h3>
 						<p>Starting from</p>
@@ -363,7 +365,7 @@
 						<p>Starting from</p>
 						<h2>60$</h2>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
@@ -523,12 +525,12 @@
 	</section>
 
 	<!-- Contact section -->
-	<section class="contact-section" id="Contact">
+	<section class="contact-section" id="Appoinment">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-sm-4">
 					<div class="title">
-						<h2>Contact us</h2>
+						<h2>Appoinment Request</h2>
 						<p>Send us a message</p>
 					</div>
 					<p class="contact-info">
@@ -540,15 +542,32 @@
 				<div class="col-md-9 col-sm-8">
 					<form>
 						<div class="row">
-							<div class="col-md-4">
-								<input type="text" placeholder="YOUR FULL NAME">
+							<h2>Contact information</h2>
+							<div class="col-md-6">
+								<input type="text" placeholder="FIRST NAME">
 							</div>
-							<div class="col-md-4">
-								<input type="text" placeholder="YOUR EMAIL ADDRESS">
+							<div class="col-md-6">
+								<input type="text" placeholder="LAST NAME">
 							</div>
-							<div class="col-md-4">
-								<input type="text" placeholder="MESSAGE SUBJECT">
+							<div class="col-md-6">
+								<input type="text" placeholder="PHONE NO">
 							</div>
+							<div class="col-md-6">
+								<input type="email" placeholder="EMAIL">
+							</div>
+							<h2>Appointment details</h2>
+							<div class="col-md-6">
+								<input type="date" placeholder="">
+							</div>
+							<div class="col-md-6">
+								<input type="time" placeholder="">
+							</div>
+							<div class="col-md-6">
+								<select class="form-control">
+									<option>I'm making an appointment for</option>
+								</select>
+							</div>
+							
 							<div class="col-md-12">
 								<textarea placeholder="WRITE YOUR MESSAGE HERE..."></textarea>
 								<a href="#" class="btn orange-btn-line pull-right">SEND</a>
