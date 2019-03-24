@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Thanks extends CI_Controller {
 
 	public function index()
 	{
-		redirect(base_url('admin'));
+		$this->load->view('website/thanks');
 	}
 }
