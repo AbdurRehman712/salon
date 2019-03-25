@@ -6,6 +6,12 @@
 			return true;
 		}
 
+		public function get_tasks_salary($data){
+			$query ='select COUNT( at.task_id ) as TotalTasks , SUM( (select t.task_price from tasks t where t.id = at.task_id) ) as TotalEarning from assign_tasks at where at.task_status = 1 AND at.worker_id =' +  $data['worker_id'] + 'and at.task_date >= ' + $data['salary_month_start'] + ' and at.task_date <= ' + $data['salary_month_end'];
+			$query = $this->db->get($query);
+			return $result = $query->result_array();
+		}
+
 		public function get_all_accounts(){
 			$query = $this->db->get('accounts');
 			return $result = $query->result_array();

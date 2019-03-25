@@ -109,7 +109,7 @@
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['all_worker'] =  $this->user_model->get_all_worker();
-					$data['all_appoinment'] =  $this->appoinment_model->get_all_appoinments();
+					$data['all_appoinments'] =  $this->appoinment_model->get_all_appoinments1();
 					$data['product'] = $this->product_model->get_all_products();
 					$data['task'] = $this->task_model->get_all_tasks();
 					$data['view'] = 'admin/tasks/assign_task_add';
@@ -119,6 +119,7 @@
 					$data = array(
 						'task_id' => $this->input->post('task_id'),
 						'worker_id' => $this->input->post('worker_id'),
+						'appoinment_id' => $this->input->post('appoinment_id'),
 						'task_date' => $this->input->post('task_date'),
 						'task_status' => $this->input->post('task_status'),
 
@@ -135,7 +136,7 @@
 			}
 			else{
 				$data['all_worker'] =  $this->user_model->get_all_worker();
-				$data['all_appoinment'] =  $this->appoinment_model->get_all_appoinments();
+				$data['all_appoinments'] =  $this->appoinment_model->get_all_appoinments1();
 				$data['product'] = $this->product_model->get_all_products();
 				$data['task'] = $this->task_model->get_all_tasks();
 				$data['view'] = 'admin/tasks/assign_task_add';
@@ -154,7 +155,7 @@
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['all_worker'] =  $this->user_model->get_all_worker();
-					$data['all_appoinment'] =  $this->appoinment_model->get_all_appoinments();
+					$data['all_appoinments'] =  $this->appoinment_model->get_all_appoinments1();
 					$data['task'] = $this->task_model->get_all_tasks();
 					$data['product'] = $this->product_model->get_all_products();
 					$data['assign_task'] = $this->assign_task_model->get_assign_task_by_id($id);
@@ -165,6 +166,7 @@
 					$data = array(
 						'task_id' => $this->input->post('task_id'),
 						'worker_id' => $this->input->post('worker_id'),
+						'appoinment_id' => $this->input->post('appoinment_id'),
 						'task_date' => $this->input->post('task_date'),
 						'task_status' => $this->input->post('task_status'),
 						'updated_at' => date('Y-m-d : h:m:s'),
@@ -179,7 +181,7 @@
 			}
 			else{
 				$data['all_worker'] =  $this->user_model->get_all_worker();
-				$data['all_appoinment'] =  $this->appoinment_model->get_all_appoinments();
+				$data['all_appoinments'] =  $this->appoinment_model->get_all_appoinments1();
 				$data['task'] = $this->task_model->get_all_tasks();
 				$data['product'] = $this->product_model->get_all_products();
 				$data['assign_task'] = $this->assign_task_model->get_assign_task_by_id($id);

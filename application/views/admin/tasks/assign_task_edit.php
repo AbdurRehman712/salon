@@ -47,7 +47,7 @@
 
                 <div class="col-sm-9">
                   <select name="appoinment_id" class="form-control">
-                  <?php foreach($all_appoinment as $row) { ?>
+                  <?php foreach($all_appoinments as $row) { ?>
                     <option value="<?php echo $row['id'];?>" <?php if($row['id'] == $assign_task['appoinment_id']){ echo 'selected';} ?>><?php echo $row['product_id'];?>(<?php echo $row['appoinment_date'];?>)</option>
                   <?php } ?>
                 

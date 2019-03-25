@@ -55,6 +55,20 @@
 			
 		}
 
+		
+		public function get_tasks_salary(){ 
+			// POST data 
+			$data = array(
+				'worker_id' => $this->input->post('worker_id'),
+				'salary_month_start' => $this->input->post('salary_month_start'),
+				'salary_month_end' => $this->input->post('salary_month_end')
+			);
+			
+			// get data 
+			$data = $this->account_model->get_tasks_salary($data);
+			echo json_encode($data); 
+		  }
+
 		public function edit($id = 0){
 			if($this->input->post('submit')){
 				$this->form_validation->set_rules('worker_id', 'Select Worker', 'trim|required');

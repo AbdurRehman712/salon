@@ -52,7 +52,7 @@
                 <div class="col-sm-9">
                   <select name="appoinment_id" class="form-control">
                   <option value="">Select Appoinment</option>
-                  <?php foreach($all_appoinment as $row) { ?>
+                  <?php foreach($all_appoinments as $row) { ?>
                     <option value="<?php echo $row['id'];?>"><?php echo $row['product_id'];?>(<?php echo $row['appoinment_date'];?>)</option>
                   <?php } ?>
                 

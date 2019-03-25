@@ -19,7 +19,7 @@
 
 				$this->form_validation->set_rules('firstname', 'Username', 'trim|required');
 				$this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
-				$this->form_validation->set_rules('email', 'Email', 'trim|required');
+				$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]|xss_clean',array('is_unique'=>'This %s already registered','required' => 'You must provide a %s.','valid_email'=>'invalid email'));
 				$this->form_validation->set_rules('mobile_no', 'Number', 'trim|required');
 				$this->form_validation->set_rules('password', 'Password', 'trim|required');
 				$this->form_validation->set_rules('user_role', 'User Role', 'trim|required');
