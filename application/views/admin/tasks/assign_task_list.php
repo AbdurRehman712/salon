@@ -22,9 +22,9 @@
         <tbody>
           <?php foreach($all_assign_tasks as $row): ?>
           <tr>
-            <td><?= $row['task_id']; ?></td>
-            <td><?= $row['worker_id']; ?></td>
-            <td><?= $row['appoinment_id']; ?></td>
+            <td><?= $row['TaskName']; ?></td>
+            <td><?= $row['WorkerName']; ?></td>
+            <td><?= $row['ProductName']; ?></td>
             <td><?= $row['task_date']; ?></td>
             <td>
               <span class="btn btn-primary btn-flat btn-xs">

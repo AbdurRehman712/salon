@@ -7,8 +7,8 @@
 		}
 
 		public function get_all_assign_tasks(){
-			$query = $this->db->get('assign_tasks');
-			return $result = $query->result_array();
+			$query = 'select * ,( select t.task_name from tasks t where t.id = at.task_id) as TaskName , ( select u.username from users u where u.id = at.worker_id ) as WorkerName , ( select product_name from products p where p.id IN (select a.product_id from appoinments a where a.id = at.appoinment_id) ) as ProductName from assign_tasks at';
+			return $this->db->query($query)->result_array();
 		}
 
 		public function get_assign_task_by_id($id){

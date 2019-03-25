@@ -7,8 +7,9 @@
 		}
 
 		public function get_all_appoinments(){
-			$query = $this->db->get('appoinments');
-			return $result = $query->result_array();
+			$query = 'select parent.id as id , (select product_name from products p where p.id = parent.product_id) as ProductName , (select u.username from users u where u.id = parent.customer_id) as CustomerName , appoinment_time, appoinment_date , appoinment_status , comments from appoinments parent' ;
+			$res = $this->db->query($query);
+			return $res->result_array();
 		}
 
 		public function get_appoinment_by_id($id){

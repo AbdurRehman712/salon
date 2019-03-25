@@ -23,8 +23,8 @@
         <tbody>
           <?php foreach($all_appoinments as $row): ?>
           <tr>
-            <td><?= $row['product_id']; ?></td>
-            <td><?= $row['customer_id']; ?></td>
+            <td><?= $row['ProductName']; ?></td>
+            <td><?= $row['CustomerName']; ?></td>
             <td><?= $row['appoinment_date']; ?></td>
             <?php 
                 $originalDate = $row['appoinment_time'];
