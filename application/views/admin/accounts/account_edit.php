@@ -16,6 +16,22 @@
                   <?= isset($msg)? $msg: ''; ?>
               </div>
             <?php endif; ?>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Select Month</label>
+
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+                    <input type="hidden" name="salary_month" id="salary_month" value="<?php echo  $account['salary_month'];?>">
+                    <span>
+                      <i class="fa fa-calendar"></i> <?php echo  $account['salary_month'];?>
+                    </span>
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
            
             <?php echo form_open(base_url('admin/accounts/edit/'.$account['id']), 'class="form-horizontal"' )?> 
             <div class="form-group">
@@ -30,21 +46,6 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-2">Select Month</label>
-
-              <div class="col-sm-9">
-                <div class="input-group">
-                  <button type="button" class="btn btn-default pull-right" id="daterange-btn">
-                    <input type="hidden" name="salary_month" id="salary_month" value="<?php echo  $account['salary_month'];?>">
-                    <span>
-                      <i class="fa fa-calendar"></i> <?php echo  $account['salary_month'];?>
-                    </span>
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
 
             <div class="form-group">
                 <label for="total_tasks" class="col-sm-2 control-label">Total Tasks</label>

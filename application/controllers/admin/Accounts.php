@@ -21,8 +21,8 @@
 
 				$this->form_validation->set_rules('worker_id', 'Select Worker', 'trim|required');
 				$this->form_validation->set_rules('salary_month', 'Salary Month', 'trim|required');
-				$this->form_validation->set_rules('total_tasks', 'Total Tasks', 'trim|required');
-				$this->form_validation->set_rules('salary_amount', 'Salary Amount', 'trim|required');
+				$this->form_validation->set_rules('total_tasks', 'Total Tasks', 'trim');
+				$this->form_validation->set_rules('salary_amount', 'Salary Amount', 'trim');
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['all_workers'] =  $this->user_model->get_all_worker();
@@ -56,16 +56,20 @@
 		}
 
 		
-		public function get_tasks_salary(){ 
-			// POST data 
+		public function get_tasks_salary($worker_id, $salary_month_start, $salary_month_end){ 
+			// POST data
+			// var_dump ($worker_id);
+			// die();
 			$data = array(
-				'worker_id' => $this->input->post('worker_id'),
-				'salary_month_start' => $this->input->post('salary_month_start'),
-				'salary_month_end' => $this->input->post('salary_month_end')
+				'worker_id' => $worker_id,
+				'salary_month_start' => $salary_month_start,
+				'salary_month_end' => $salary_month_end
 			);
 			
 			// get data 
 			$data = $this->account_model->get_tasks_salary($data);
+			// var_dump($data);
+			// exit();
 			echo json_encode($data); 
 		  }
 
@@ -73,8 +77,8 @@
 			if($this->input->post('submit')){
 				$this->form_validation->set_rules('worker_id', 'Select Worker', 'trim|required');
 				$this->form_validation->set_rules('salary_month', 'Salary Month', 'trim|required');
-				$this->form_validation->set_rules('total_tasks', 'Total Tasks', 'trim|required');
-				$this->form_validation->set_rules('salary_amount', 'Salary Amount', 'trim|required');
+				$this->form_validation->set_rules('total_tasks', 'Total Tasks', 'trim');
+				$this->form_validation->set_rules('salary_amount', 'Salary Amount', 'trim');
 
 				if ($this->form_validation->run() == FALSE) {
 					$data['all_workers'] =  $this->user_model->get_all_worker();

@@ -53,6 +53,7 @@ $route['default_controller'] = 'Web_Home';
 
 // setting route for admin
 $route['admin'] = 'admin/auth';
+// $route['accounts/get_tasks_salary'] = 'accounts/get_tasks_salary';
 
 $route['admin/dashboard2'] = 'admin/dashboard/index2';
 

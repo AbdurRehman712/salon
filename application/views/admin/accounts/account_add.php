@@ -22,7 +22,7 @@
             <?php echo form_open(base_url('admin/accounts/add'), 'class="form-horizontal"');  ?> 
 
             <div class="form-group">
-                <label class="col-sm-2">Select Month</label>
+                <label class="col-sm-2 control-label">Select Month</label>
 
               <div class="col-sm-9">
                 <div class="input-group">
@@ -54,18 +54,20 @@
               </div>
 
               <div class="form-group">
-                <label for="total_tasks" class="col-sm-2 control-label">Total Tasks</label>
+                <label for="total_tasks1" class="col-sm-2 control-label">Total Tasks</label>
 
                 <div class="col-sm-9">
-                  <input type="text" name="total_tasks" value="333" class="form-control" id="total_tasks" placeholder="">
+                  <input type="text" name="total_tasks1" value="0" class="form-control" disabled="" id="total_tasks1" placeholder="">
+                  <input type="hidden" name="total_tasks" value="0" class="form-control" id="total_tasks" placeholder="">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="salary_amount" class="col-sm-2 control-label">Salary Amount</label>
+                <label for="salary_amount1" class="col-sm-2 control-label">Salary Amount</label>
 
                 <div class="col-sm-9">
-                    <input type="text" name="salary_amount" class="form-control" id="salary_amount" placeholder="">
+                    <input type="text" name="salary_amount1" value="0" class="form-control" disabled="" id="salary_amount1" placeholder="">
+                    <input type="hidden" name="salary_amount" value="0" class="form-control" id="salary_amount" placeholder="">
                 </div>
               </div>
       
@@ -122,7 +124,7 @@ $(function () {
 
   $("#add_account").addClass('active');
 </script>    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script type='text/javascript'>
   // baseURL variable
   var baseURL= "<?php echo base_url();?>";
@@ -132,22 +134,33 @@ $(function () {
     // Worker change
     $('#worker_id').change(function(){
       var worker_id = $(this).val();
-      
+      var salary_month_start = document.getElementById("salary_month_start").value;
+      var salary_month_end = document.getElementById("salary_month_end").value;
+
+      //console.log ("salary month start ->" + salary_month_start);
       // AJAX request
       $.ajax({
-        url:'<?=base_url()?>admin/accounts/get_tasks_salary',
-        method: 'post',
-        data: {worker_id: worker_id},
+        url:'<?=base_url()?>admin/accounts/get_tasks_salary/' + worker_id + '/' + salary_month_start + '/' + salary_month_end,
+        type: "GET",
+        // data: {totaltasks: TotalTasks},
         dataType: 'json',
-        success: function(response){
+        error: function() {
+                alert('Select Month First then Select Worker...!');
+        },
+        success: function(data){
           // Remove options 
-          $('#total_tasks').val();
-          $('#salary_amount').val();
+          // $('#total_tasks').val("dsfas");
+          // $('#salary_amount').val("dfsafsadsf");
+          //console.log (data[0].TotalEarning);
 
           // Add options
-          $.each(response,function(index,data){
-             $('#total_tasks').val(data['TotalTasks']);
-          });
+          // $.each(response,function(data){
+            //  $('#total_tasks').val(data['TotalTasks']);
+             $('#total_tasks').val(data[0].TotalTasks);
+             $('#salary_amount').val(data[0].TotalEarning);
+             $('#total_tasks1').val(data[0].TotalTasks);
+             $('#salary_amount1').val(data[0].TotalEarning);
+          // });
         }
      });
    });
