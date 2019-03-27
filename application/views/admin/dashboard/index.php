@@ -20,7 +20,7 @@
 
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-aqua"> 
             <div class="inner">
               <h3><?php echo $all_appoinments; ?></h3>
 
