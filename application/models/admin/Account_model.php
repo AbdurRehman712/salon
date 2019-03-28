@@ -7,14 +7,8 @@
 		}
 
 		public function get_tasks_salary($data){
-<<<<<<< HEAD
-			$query ='select COUNT( at.task_id ) as TotalTasks , SUM( (select t.task_price from tasks t where t.id = at.task_id) ) as TotalEarning from assign_tasks at where at.task_status = 1 AND at.worker_id =' . $data['worker_id'] + 'and at.task_date >= "' + $data['salary_month_start'] + '" and at.task_date <= "' + $data['salary_month_end'] +'"' ;
-=======
-			// var_dump($data);
-			// exit();
 			$query ='select COUNT( at.task_id ) as TotalTasks , SUM( (select t.task_price from tasks t where t.id = at.task_id) ) as TotalEarning from assign_tasks at where at.task_status = 1 AND at.worker_id = ' . $data['worker_id'] . ' AND at.task_date >= ' . '"' . $data['salary_month_start'] . '"' . ' AND at.task_date <= ' . '"' . $data['salary_month_end'] . '"';
-			//+  $data['worker_id'] 
->>>>>>> 7de96f2283b3e7406e875288bf11eb89c98ee144
+
 			return $this->db->query($query)->result_array();
 		}
 

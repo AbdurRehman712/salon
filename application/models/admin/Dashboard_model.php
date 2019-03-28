@@ -13,7 +13,7 @@
 			// return $result = $query->result_array();
 			// return $this->db->count_all_results('users');
 
-			// echo $this->db->count_all_results('users');  // Produces an integer, like 25
+			// echo $this->db->count_all_results('users'); 
 			$this->db->where('is_worker', '1');
 			$this->db->from('users');
 			return $this->db->count_all_results();
@@ -23,6 +23,16 @@
 			return $this->db->count_all_results('appoinments');
 			// $this->db->from('users');
 			// return $this->db->count_all_results();
+		}
+
+		public function get_expense(){;
+			$query = 'SELECT SUM(salary_amount) AS salary_amount FROM accounts WHERE MONTH(created_at) = MONTH(CURRENT_DATE())';
+			return $this->db->query($query)->row();
+		}
+		
+		public function get_order_amount(){
+			$query = 'SELECT SUM((select p.product_price from products p where p.id = a.id)) AS order_amount FROM appoinments a WHERE MONTH(created_at) = MONTH(CURRENT_DATE())';
+			return $this->db->query($query)->row();
 		}
 
 	}

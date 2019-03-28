@@ -9,6 +9,8 @@
 
 		public function index(){
 			$data['all_customers'] =  $this->dashboard_model->get_all_customers();
+			$data['get_expense'] =  $this->dashboard_model->get_expense();
+			$data['get_order_amount'] =  $this->dashboard_model->get_order_amount();
 			$data['all_appoinments'] =  $this->dashboard_model->get_all_appoinments();
 			$data['view'] = 'admin/dashboard/index';
 			$this->load->view('admin/layout', $data);
