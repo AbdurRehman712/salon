@@ -7,13 +7,6 @@
 		}
 
 		public function get_all_customers(){
-			// $query = 'select COUNT(id) from users WHERE is_worker = 1';
-			// return $this->db->query($query)->result();
-			// //$query = $this->db->get('accounts');
-			// return $result = $query->result_array();
-			// return $this->db->count_all_results('users');
-
-			// echo $this->db->count_all_results('users'); 
 			$this->db->where('is_worker', '1');
 			$this->db->from('users');
 			return $this->db->count_all_results();
@@ -21,8 +14,6 @@
 
 		public function get_all_appoinments(){
 			return $this->db->count_all_results('appoinments');
-			// $this->db->from('users');
-			// return $this->db->count_all_results();
 		}
 
 		public function get_expense(){;
